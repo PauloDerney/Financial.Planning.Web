@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve -o",
     "build": "ng build",
-    "build:prod": "ng build --prod --output-hashing none",
+    "build:prod": "ng build --prod --base-href /Financial.Web.Demo/ --output-hashing none",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
