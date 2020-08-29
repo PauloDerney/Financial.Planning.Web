@@ -9,7 +9,7 @@ import Chart from 'chart.js';
 export class CashFlowDetailComponent implements OnInit {
 
   transactions = [];
-  revenueData = {};
+  revenueData: any = {};
 
   constructor() { }
 
