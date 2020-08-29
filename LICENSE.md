@@ -1,7 +1,7 @@
-[Template Dashboard Angular 9](https://www.creative-tim.com/product/paper-dashboard-angular) version free and open source under MIT License.
+- [Template Dashboard Angular 9](https://www.creative-tim.com/product/paper-dashboard-angular) version free and open source under MIT License.
 Copyright (c) 2017 Creative Tim (www.creative-tim.com)
 
-The new components developed and modified by [Paulo Derney](https://www.linkedin.com/in/pauloderney/) for listing, creations, flow controls, modification of layouts and all others that were not covered by the template license are all also covered under the MIT License.
+- The new components developed and modified by [Paulo Derney](https://www.linkedin.com/in/pauloderney/) for listing, creations, flow controls, modification of layouts and all others that were not covered by the template license are all also covered under the MIT License.
 
 
 MIT License 
