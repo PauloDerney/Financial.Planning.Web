@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    Receitas Avulsas Pendentes e Receitas Fixas</h4>
+                <p class="card-category">
+                    Exibição das receitas avulsas pendentes e receitas fixas ativas para o mês</p>
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-2">
+                          </div>
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <a type="button" class="btn btn-outline-default pull-right button-search" href="#/pages/revenues/add">Nova Receita</a>
+                            </div>
+                        </div>
+                      </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th>
+                                Nome
+                            </th>
+                            <th>
+                                Tipo
+                            </th>
+                            <th>
+                                Valor
+                            </th>
+                            <th>
+                                Data de Entrada
+                            </th>
+                            <th >
+                                Emissão de Nota
+                            </th>
+                            <th style="text-align: right;">
+                                Ações
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of rows">
+                                <td>
+                                    {{ item.name }}
+                                </td>
+                                <td>
+                                    {{ item.type }}
+                                </td>
+                                <td>
+                                    {{ item.amount | currency: 'BRL' }}
+                                </td>
+                                <td>
+                                    {{ item.entryDate | date: 'dd/MM/yyyy' }}
+                                </td>
+
+                                <td>
+                                    {{ item.invoiceRequired }}
+                                </td>
+                                <td style="text-align: right;">
+                                    <i style="cursor: pointer;padding-right: 5px;" class="nc-icon nc-ruler-pencil"></i>
+                                    <i style="cursor: pointer;" class="nc-icon nc-simple-remove"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

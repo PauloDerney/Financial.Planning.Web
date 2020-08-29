@@ -1,0 +1,122 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card card-user">
+        <div class="card-header">
+          <h5 class="card-title">Cadastro de Receita</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Nome</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Tipo</label>
+                  <select class="form-control">
+                      <option value="1">Receita Avulsa</option>
+                      <option value="2">Receita Fixa</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Valor</label>
+                  <input type="number" class="form-control" placeholder="R$ 0,00">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Emite Nota</label>
+                  <select class="form-control">
+                      <option value="1">Sim</option>
+                      <option value="2">Não</option>
+                  </select>
+                </div>
+              </div>
+
+            
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Descrição</label>
+                    <textarea class="form-control textarea"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>E-mail Para Emissão de Nota</label>
+                    <textarea class="form-control textarea"></textarea>
+                  </div>
+                </div>
+              </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Origem</label>
+                      <input type="text" class="form-control" placeholder="">
+                    </div>
+                  </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Fonte Destino</label>
+                    <select class="form-control">
+                        <option value="0">Selecione</option>
+                        <option value="1">NuConta PF</option>
+                        <option value="2">NuConta PJ</option>
+                        <option value="3">Meliuz</option>
+                        <option value="4">PicPay</option>
+                        <option value="5">Dinheiro/Bolso</option>
+                    </select>
+                    </div>
+                  </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Data de Entrada</label>
+                  <input type="date" class="form-control" placeholder="dd/MM/yyyy">
+                </div>
+              </div>
+            </div>
+          <h5 class="card-title">Receita Fixa</h5>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Valor Base</label>
+                  <input type="number" class="form-control" placeholder="R$ 0.00">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Confirmação Mensal</label>
+                  <select class="form-control">
+                    <option value="1">Sim</option>
+                    <option value="2">Não</option>
+                </select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Dia de Entrada</label>
+                  <input type="number" class="form-control" min="1" max="31" placeholder="10">
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <a type="submit" class="btn btn-danger btn-round pull-left" href="#/pages/revenues">Cancelar</a>
+                <button type="submit" class="btn btn-success btn-round pull-right">Salvar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

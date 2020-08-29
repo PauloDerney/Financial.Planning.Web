@@ -1,0 +1,182 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"></div>
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card-header ">
+                            <h5 class="card-title">Receitas x Despesas</h5>
+                            <p class="card-category"></p>
+                        </div>
+                        <div class="card-body ">
+                            <canvas id="chartOverview"></canvas>
+                        </div>
+                        <div class="card-footer ">
+                            <div class="legend">
+                                <i class="fa fa-circle text-primary"></i>
+                                Receitas
+                                <i class="fa fa-circle" style="color: #d93524;"></i>
+                                Gastos
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Mês/Ano Referência</label>
+                            <input type="date" class="form-control" placeholder="dd/MM/yyyy"/>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-header ">
+                            <h5 class="card-title">Uso Receita</h5>
+                            <p class="card-category"></p>
+                        </div>
+                        <div class="card-body ">
+                            <canvas id="chartRevenueBill"></canvas>
+                        </div>
+                        <div class="card-footer ">
+                            <div class="legend">
+                                <i class="fa fa-circle text-primary"></i>
+                                Gastos
+                                <i class="fa fa-circle text-warning"></i>
+                                Investimento
+                                <i class="fa fa-circle text-danger"></i>
+                                Reserva
+                                <i class="fa fa-circle text-gray"></i>
+                                Outros
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">
+                            Receitas</h4>
+                        <p class="card-category">
+                            Exibição das receitas fixas e Gastos para o mês informado</p>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Nome
+                                    </th>
+                                    <th>
+                                        Valor
+                                    </th>
+                                    <th>
+                                        Entrada
+                                    </th>
+                                    <th>
+                                       Status 
+                                    </th>
+                                    <th style="text-align: right;">
+                                        Ações
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of revenueRows">
+                                        <td>
+                                            {{ item.name }}
+                                        </td>
+                                        <td>
+                                            {{ item.amount | currency: 'BRL' }}
+                                        </td>
+                                        <td>
+                                            {{ item.entryDate | date: 'dd/MM/yyyy' }}
+                                        </td>
+                                        <td>
+                                            {{ item.status }}
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <i style="cursor: pointer;padding-right: 5px;" title="Enviar Pedido de Emissão" class="nc-icon nc-email-85" ></i>
+                                            <i style="cursor: pointer;padding-right: 5px;" title="Editar Receita" class="nc-icon nc-ruler-pencil"></i>
+                                            <i style="cursor: pointer;" title="Remover Receita" class="nc-icon nc-simple-remove"></i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">
+                            Despesas</h4>
+                        <p class="card-category">
+                            Exibição das Despesas fixas e Gastos para o mês informado</p>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Nome
+                                    </th>
+                                    <th>
+                                        Vencimento
+                                    </th>
+                                    <th>
+                                        Valor
+                                    </th>
+                                    <th>
+                                        Pago
+                                    </th>
+                                    <th style="text-align: right;">
+                                        Ações
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of rows">
+                                        <td>
+                                            {{ item.name }}
+                                        </td>
+                                        <td>
+                                            {{ item.dueDate | date: 'dd/MM/yyyy' }}
+                                        </td>
+                                        <td>
+                                            {{ item.amount | currency: 'BRL' }}
+                                        </td>
+                                        <td>
+                                            {{ item.amountPaid | currency: 'BRL' }}
+                                        </td>
+                                        <td style="text-align: right;">
+                                            <i
+                                                style="cursor: pointer;padding-right: 5px;"
+                                                class="nc-icon nc-money-coins"
+                                                title="Pagar Despesa"
+                                                (click)="pay()"></i>
+                                            <i style="cursor: pointer;padding-right: 5px;" title="Editar Despesa" class="nc-icon nc-ruler-pencil"></i>
+                                            <i style="cursor: pointer;" title="Remover Despesa" class="nc-icon nc-simple-remove"></i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

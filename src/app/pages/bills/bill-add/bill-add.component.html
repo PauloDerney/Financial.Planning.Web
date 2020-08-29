@@ -1,0 +1,133 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card card-user">
+        <div class="card-header">
+          <h5 class="card-title">Cadastro de Gasto</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Nome</label>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Tipo</label>
+                  <select class="form-control">
+                      <option value="0">Selecione</option>
+                      <option value="1">Compra Avulsa</option>
+                      <option value="2">Despesa Fixa</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Genêro do Gasto</label>
+                <select class="form-control">
+                    <option value="0">Selecione</option>
+                    <option value="1">Alimentação</option>
+                    <option value="2">Transporte</option>
+                </select>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Valor</label>
+                  <input type="number" class="form-control" placeholder="R$ 0,00">
+                </div>
+              </div>
+
+            
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Descrição</label>
+                    <textarea class="form-control textarea"></textarea>
+                  </div>
+                </div>
+              </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Tipo de Pagamento</label>
+                    <select class="form-control">
+                        <option value="0">Selecione</option>
+                        <option value="1">Dinheiro</option>
+                        <option value="2">Débito</option>
+                        <option value="3">Crédito</option>
+                    </select>
+                    </div>
+                  </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Cartão</label>
+                  <select class="form-control">
+                    <option value="0">Selecione</option>
+                    <option value="1">NuBank XXXX</option>
+                </select>
+                </div>
+              </div>
+              
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Parcelas</label>
+                  <input type="number" class="form-control" placeholder="Last Name" value="01">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Data da Efetivação</label>
+                  <input type="date" class="form-control" placeholder="dd/MM/yyyy">
+                </div>
+              </div>
+            </div>
+          <h5 class="card-title">Despesa Fixa</h5>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Número de Parcelas</label>
+                  <input type="text" class="form-control" placeholder="999">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Valor Base</label>
+                  <input type="number" class="form-control" placeholder="R$ 0.00">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Confirmação Mensal</label>
+                  <select class="form-control">
+                    <option value="1">Sim</option>
+                    <option value="2">Não</option>
+                </select>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Dia de Vencimento</label>
+                  <input type="number" class="form-control" min="1" max="31" placeholder="10">
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <a type="submit" class="btn btn-danger btn-round pull-left" href="#/pages/bills">Cancelar</a>
+                <button type="submit" class="btn btn-success btn-round pull-right">Salvar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

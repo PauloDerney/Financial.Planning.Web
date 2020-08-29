@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-title">{{ revenueData.name }}</h5>
+                <p class="card-category">Historico de Movimentações</p>
+            </div>
+            <div class="card-body">
+                <canvas id="flowChart" width="400" height="100"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card card-user">
+            <div class="image">
+                <img src="assets/img/damir-bosnjak.jpg" alt="..."></div>
+                <div class="card-body">
+                    <div class="author">
+                        <a href="#">
+                            <img class="avatar border-gray" src="assets/img/mike.jpg" alt="...">
+                                <h5 class="title">{{revenueData.name}}</h5>
+                            </a>
+                            <p class="description"></p>
+                        </div>
+                        <p class="description text-center">
+                            Valor Atual:
+                            {{revenueData.amount | currency: 'BRL'}}</p>
+                            <p class="description text-center">
+                                Ultima Transação:
+                                {{revenueData.lastTransactionDate | date: 'dd/MM/yyyy HH:mm'}}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Transações do Período</h4>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Data Referência De</label>
+                                    <input type="date" class="form-control"></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Data Referência Até</label>
+                                        <input type="date" class="form-control"></div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a
+                                            type="submit"
+                                            class="btn btn-outline-primary pull-right button-search"
+                                            href="#/pages/bills/add">Filtrar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <ul class="list-unstyled team-members">
+                                    <li *ngFor="let transaction of transactions">
+                                        <div class="row">
+                                                <div class="col-md-9 col-9">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            {{ transaction.operationDate | date: 'dd/MM/yyyy HH:mm' }}
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            {{ transaction.name }}
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <span class="pull-right">Atualizado:
+                                                                {{ transaction.amountUpdated | currency: 'BRL' }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="text-muted">
+                                                        <small>Anterior:
+                                                            {{ transaction.oldValue | currency: 'BRL' }}</small>
+                                                        <small class="pull-right" [ngClass]="{ 'text-success': transaction.operator == '+', 'text-error': transaction.operator == '-'}">
+                                                            Operação:
+                                                            {{transaction.operator}}
+                                                            {{ transaction.operationValue | currency: 'BRL' }}</small>
+                                                    </span>
+                                                </div>
+                                                <div class="col-md-3 col-3 text-right">
+                                                    <button class="btn btn-sm btn-outline-success btn-round btn-icon">
+                                                        <i class="fa fa-eye"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
