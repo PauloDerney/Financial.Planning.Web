@@ -27,9 +27,9 @@
                         <p class="description text-center">
                             Valor Atual:
                             {{revenueData.amount | currency: 'BRL'}}</p>
-                            <p class="description text-center">
-                                Ultima Transação:
-                                {{revenueData.lastTransactionDate | date: 'dd/MM/yyyy HH:mm'}}</p>
+                        <p class="description text-center">
+                            Ultima Transação:
+                            {{revenueData.lastTransactionDate | date: 'dd/MM/yyyy HH:mm'}}</p>
                     </div>
                 </div>
 
@@ -62,37 +62,46 @@
                                 <ul class="list-unstyled team-members">
                                     <li *ngFor="let transaction of transactions">
                                         <div class="row">
-                                                <div class="col-md-9 col-9">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            {{ transaction.operationDate | date: 'dd/MM/yyyy HH:mm' }}
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            {{ transaction.name }}
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <span class="pull-right">Atualizado:
-                                                                {{ transaction.amountUpdated | currency: 'BRL' }}</span>
-                                                        </div>
+                                            <div class="col-md-9 col-9">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        {{ transaction.operationDate | date: 'dd/MM/yyyy HH:mm' }}
                                                     </div>
-                                                    <span class="text-muted">
-                                                        <small>Anterior:
-                                                            {{ transaction.oldValue | currency: 'BRL' }}</small>
-                                                        <small class="pull-right" [ngClass]="{ 'text-success': transaction.operator == '+', 'text-error': transaction.operator == '-'}">
-                                                            Operação:
-                                                            {{transaction.operator}}
-                                                            {{ transaction.operationValue | currency: 'BRL' }}</small>
-                                                    </span>
+                                                    <div class="col-md-4">
+                                                        {{ transaction.name }}
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <span class="pull-right">Atualizado:
+                                                            {{ transaction.amountUpdated | currency: 'BRL' }}</span>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-3 col-3 text-right">
-                                                    <button class="btn btn-sm btn-outline-success btn-round btn-icon">
-                                                        <i class="fa fa-eye"></i>
-                                                    </button>
+                                                <div class="row text-muted">
+                                                    <div class="col-md-4">
+
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <small class="pull-right">Anterior:
+                                                            {{ transaction.oldValue | currency: 'BRL' }}</small>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <small
+                                                        class="pull-right"
+                                                        [ngClass]="{ 'text-success': transaction.operator == '+', 'text-error': transaction.operator == '-'}">
+                                                        Operação:
+                                                        {{transaction.operator}}
+                                                        {{ transaction.operationValue | currency: 'BRL' }}</small>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                                            <div class="col-md-3 col-3 text-right">
+                                                <button class="btn btn-sm btn-outline-success btn-round btn-icon">
+                                                    <i class="fa fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                </div>

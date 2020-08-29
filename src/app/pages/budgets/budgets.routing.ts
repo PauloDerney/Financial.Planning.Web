@@ -8,7 +8,7 @@ export const BudgetsRoutes: Routes = [
       component: BudgetDashboardComponent
     },
     {
-        path: 'add',
+        path: 'payment',
         component: PaymentAddComponent
     }
   ];

@@ -53,7 +53,7 @@ export class BudgetDashboardComponent implements OnInit {
   }
 
   pay() {
-    this.router.navigate(['pages/payments/add'])
+    this.router.navigate(['pages/budgets/payment'])
   }
 
   generateChartRevenueBill() {
