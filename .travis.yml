@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "stable"
+
+script:
+  - npm run build:prod
+
+deploy:
+  provider: pages
+  local-dir: dist
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true  
+  on:
+    branch: master
