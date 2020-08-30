@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://github.com/PauloDerney/Financial.Web.Demo'
+  baseUrl: 'http://my-json-server.typicode.com/PauloDerney/Financial.Web.Demo'
 };
