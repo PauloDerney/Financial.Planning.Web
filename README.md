@@ -45,3 +45,42 @@ __Fluxo de Caixa__
   - Visualizar gráfico com evolução do fluxo de caixa específico
   - Visualizar transações de forma detalhada daquele fluxo de caixa para um período informado
   ![](../master/docs/cash-flow.PNG?raw=true)
+  
+  __Estrutura do Projeto__
+  ```
+  src/app  
+  |___ layouts  
+  |     |__ admin-layout  
+  |___ pages  
+  |     |__ bills  
+  |           |__ bill-add (html, scss and ts)  
+  |           |__ bill-list (html, scss and ts)  
+  |           |__ bills.module.ts  
+  |           |__ bills.routing.ts  
+  |     |__ budgets  
+  |           |__ budget-dashboard (html, scss and ts)  
+  |           |__ payment-add (html, scss and ts)  
+  |           |__ budgets.module.ts  
+  |           |__ budgets.routing.ts  
+  |     |__ cash-flow  
+  |           |__ cash-flow-dashboard (html, scss and ts)  
+  |           |__ cash-flow-detail (html, scss and ts)  
+  |           |__ cash-flow.module.ts  
+  |           |__ cash-flow.routing.ts  
+  |     |__ dashboard  
+  |     |__ revenues  
+  |           |__ revenue-add (html, scss and ts)  
+  |           |__ revenue-list (html, scss and ts)  
+  |           |__ revenues.module.ts  
+  |           |__ revenues.routing.ts  
+  |___ shared  
+  |     |__ footer (html, scss and ts)  
+  |     |__ navbar (html, scss and ts)  
+  |     |__ sidebar (html, scss and ts)  
+  |___ app.component.html  
+  |___ app.component.scss  
+  |___ app.component.ts  
+  |___ app.module.ts  
+  |___ app.routing.ts  
+  ```
+ 
