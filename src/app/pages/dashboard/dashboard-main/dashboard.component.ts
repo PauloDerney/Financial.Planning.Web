@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit{
   public chartCategoryYear;
   public chartHours;
 
-  dashboardData = {};
+  dashboardData = { stats: { } };
 
   constructor (private configurationService: ConfigurationService) { }
 
