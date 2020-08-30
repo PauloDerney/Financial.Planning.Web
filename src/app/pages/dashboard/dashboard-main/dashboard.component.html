@@ -13,7 +13,7 @@
                 <div class="col-7 col-md-8">
                   <div class="numbers">
                     <p class="card-category">Dívida Mês</p>
-                    <p class="card-title">R$ 4514.25
+                    <p class="card-title"> {{ dashboardData.stats.debtMonth | currency: 'BRL' }}
                       <p>
                   </div>
                 </div>
@@ -39,7 +39,7 @@
                 <div class="col-7 col-md-8">
                   <div class="numbers">
                     <p class="card-category">Pago Mês</p>
-                    <p class="card-title">R$ 1,345
+                    <p class="card-title">{{ dashboardData.stats.paymentInMonth | currency: 'BRL' }}
                       <p>
                   </div>
                 </div>
@@ -66,8 +66,8 @@
                 </div>
                 <div class="col-7 col-md-8">
                   <div class="numbers">
-                    <p class="card-category">Dívida Total</p>
-                    <p class="card-title">R$ 25.986
+                    <p class="card-category">Total Mês</p>
+                    <p class="card-title"> {{dashboardData.stats.totalDebt | currency: 'BRL'}}
                       <p>
                   </div>
                 </div>
@@ -93,7 +93,7 @@
                 <div class="col-7 col-md-8">
                   <div class="numbers">
                     <p class="card-category">Em Atraso</p>
-                    <p class="card-title">5
+                    <p class="card-title">{{dashboardData.stats.overdue}}
                       <p>
                   </div>
                 </div>
@@ -226,18 +226,14 @@
         <p class="card-category"></p>
       </div>
       <div class="card-body ">
-        <canvas id="chartCategoryGeneral"></canvas>
+        <canvas id="chartCategoryMonth"></canvas>
       </div>
       <div class="card-footer ">
         <div class="legend">
-          <i class="fa fa-circle text-primary"></i> Opened
-          <i class="fa fa-circle text-warning"></i> Read
-          <i class="fa fa-circle text-danger"></i> Deleted
-          <i class="fa fa-circle text-gray"></i> Unopened
         </div>
         <hr>
         <div class="stats">
-          <i class="fa fa-calendar"></i> Number of emails sent
+          <i class="fa fa-calendar"></i> Valores Gastos Por Categoria Para o Mês Atual
         </div>
       </div>
     </div>
@@ -253,14 +249,10 @@
       </div>
       <div class="card-footer ">
         <div class="legend">
-          <i class="fa fa-circle text-primary"></i> Opened
-          <i class="fa fa-circle text-warning"></i> Read
-          <i class="fa fa-circle text-danger"></i> Deleted
-          <i class="fa fa-circle text-gray"></i> Unopened
         </div>
         <hr>
         <div class="stats">
-          <i class="fa fa-calendar"></i> Number of emails sent
+          <i class="fa fa-calendar"></i> Valores Gastos Por Categoria Para o Ano Atual
         </div>
       </div>
     </div>

@@ -1,0 +1,36 @@
+{
+    "dashboard": {
+        "stats": {
+            "debtMonth": 123.45,
+            "paymentInMonth": 23.45,
+            "totalDebt": 250.46,
+            "overdue": 2
+        },
+        "upcomingMaturities": [
+            {
+                "id": "guid1",
+                "name": "Financiamento - Parcela XX",
+                "dueDate": "2020-01-01",
+                "overdue": true
+            }
+        ],
+        "debtHistory": [
+            {
+                "year": 2019,
+                "values": [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200]
+            },
+            {
+                "year": 2020,
+                "values": [100, 200, 300, 400, 500, 600, 700, 800, null, null, null, null]
+            }
+        ],
+        "historyByCategoryMonth": {
+            "categories": ["Alimentação", "Mercado", "Lazer", "Entretenimento", "Estudos"],
+            "values": [350.84, 800.45, 84.95, 25.90, 600.45]
+        },
+        "historyByCategoryYear": {
+            "categories": ["Alimentação", "Mercado", "Lazer", "Entretenimento", "Estudos"],
+            "values": [2500.84, 1500.45, 3500.95, 485.90, 5600.45]
+        }
+    }
+}

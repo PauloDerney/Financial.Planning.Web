@@ -1,9 +1,10 @@
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DashboardComponent } from './dashboard.component';
+import { DashboardComponent } from './dashboard-main/dashboard.component';
 import { DashboardRoutes } from './dashboard.routing';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { ConfigurationService } from './configuration.service';
 
 @NgModule({
   imports: [
@@ -13,6 +14,9 @@ import { NgModule } from '@angular/core';
   ],
   declarations: [
     DashboardComponent
+  ],
+  providers: [
+    ConfigurationService
   ]
 })
 

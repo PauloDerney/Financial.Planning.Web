@@ -12,6 +12,8 @@ import { AppRoutes } from './app.routing';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { BillsModule } from './pages/bills/bills.module';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HeaderInterceptor } from './core/interceptors/header.interceptor';
 
 
 @NgModule({
@@ -27,9 +29,12 @@ import { BillsModule } from './pages/bills/bills.module';
     SidebarModule,
     NavbarModule,
     ToastrModule.forRoot(),
-    FooterModule
+    FooterModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
