@@ -116,7 +116,7 @@
         </div>
         <div class="card-body">
           <ul class="list-unstyled team-members">
-            <li>
+            <li *ngFor="let item of dashboardData.upcomingMaturities">
               <div class="row">
                 <div class="col-md-2 col-2">
                   <div class="avatar">
@@ -124,71 +124,24 @@
                   </div>
                 </div>
                 <div class="col-ms-7 col-7">
-                  Financiamento Carro - Parcela XX
-                  <br />
-                  <span class="text-danger">
-                    <small>30 de Julho de 2020</small>
-                  </span>
-                </div>
-                <div class="col-md-3 col-3 text-right">
-                  <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-money"></i></button>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col-md-2 col-2">
-                  <div class="avatar">
-                    <img src="assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                  {{ item.name }}
+                  <div class="row">
+                    <div class="col-md-4">
+                      <span [ngClass]="{ 'text-danger': item.overdue, 'text-success': !item.overdue }">
+                        <small>{{ item.dueDate | date: 'dd/MM/yyyy' }}</small>
+                      </span>
+                    </div>
+                    <div class="col-md-4">
+                      <span class="text-danger">
+                        <small>{{ item.amount | currency: 'BRL' }}</small>
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <div class="col-ms-7 col-7">
-                  CPFL - Parcela 072020
-                  <br />
-                  <span class="text-danger">
-                    <small>15 de Julho de 2020</small>
-                  </span>
-                </div>
                 <div class="col-md-3 col-3 text-right">
-                  <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-money"></i></button>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col-md-2 col-2">
-                  <div class="avatar">
-                    <img src="assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                  </div>
-                </div>
-                <div class="col-md-7 col-7">
-                  Internet C-LIG - Parcela 122021
-                  <br />
-                  <span class="text-muted">
-                    <small>30 de Dezembro de 2021</small>
-                  </span>
-                </div>
-                <div class="col-md-3 col-3 text-right">
-                  <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-money"></i></button>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col-md-2 col-2">
-                  <div class="avatar">
-                    <img src="assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                  </div>
-                </div>
-                <div class="col-md-7 col-7">
-                  Condominio - Parcela 122021
-                  <br />
-                  <span class="text-muted">
-                    <small>30 de Dezembro de 2021</small>
-                  </span>
-                </div>
-                <div class="col-md-3 col-3 text-right">
-                  <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-money"></i></button>
+                  <button class="btn btn-sm btn-outline-success btn-round btn-icon" [routerLink]="['../../budgets/payment', item.id]">
+                    <i class="fa fa-money"></i>
+                  </button>
                 </div>
               </div>
             </li>
@@ -206,14 +159,7 @@
         <p class="card-category"></p>
       </div>
       <div class="card-body">
-        <canvas id="speedChart" width="400" height="100"></canvas>
-      </div>
-      <div class="card-footer">
-        <div class="chart-legend">
-          <i class="fa fa-circle text-warning"></i> 2019
-          <i class="fa fa-circle text-info"></i> 2020
-        </div>
-        <hr/>
+        <canvas id="debtChart" width="400" height="100"></canvas>
       </div>
     </div>
   </div>

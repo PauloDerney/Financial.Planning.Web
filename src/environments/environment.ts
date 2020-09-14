@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:3000'
+  baseUrl: 'https://my-json-server.typicode.com/PauloDerney/Financial.Web.Demo'
 };

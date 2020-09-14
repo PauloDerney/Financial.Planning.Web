@@ -4,24 +4,32 @@
             "debtMonth": 123.45,
             "paymentInMonth": 23.45,
             "totalDebt": 250.46,
-            "overdue": 2
+            "overdue": 1
         },
         "upcomingMaturities": [
             {
                 "id": "guid1",
                 "name": "Financiamento - Parcela XX",
                 "dueDate": "2020-01-01",
+                "amount": 2437.45,
                 "overdue": true
+            },
+            {
+                "id": "guid2",
+                "name": "Financiamento - Parcela XX",
+                "dueDate": "2021-01-01",
+                "amount": 437.45,
+                "overdue": false
             }
         ],
         "debtHistory": [
             {
-                "year": 2019,
-                "values": [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200]
+                "label": 2019,
+                "values": [500, 350, 800, 400, 1578, 600, 896.35, 800, 900, 7530, 500, 986.65]
             },
             {
-                "year": 2020,
-                "values": [100, 200, 300, 400, 500, 600, 700, 800, null, null, null, null]
+                "label": 2020,
+                "values": [246, 478.98, 300, 895.89, 897.53, 1534.48, 1789.45, 1356.78, null, null, null, null]
             }
         ],
         "historyByCategoryMonth": {

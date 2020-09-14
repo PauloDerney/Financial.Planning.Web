@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
 import { ConfigurationService } from '../configuration.service';
 import { ChartPieBuilder } from 'app/core/chart/chart-pie.builder';
+import { ChartLineBuilder } from 'app/core/chart/chart-line.builder';
 
 
 @Component({
@@ -36,53 +37,57 @@ export class DashboardComponent implements OnInit{
         new ChartPieBuilder('chartCategoryMonth')
         .build(response.historyByCategoryMonth.categories, response.historyByCategoryMonth.values);
 
+        new ChartLineBuilder('debtChart')
+        .buildChartLabels(['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'])
+        .buildChartData(response.debtHistory)
+        .build();
       });
 
-      var speedCanvas = document.getElementById("speedChart");
+      // var speedCanvas = document.getElementById("speedChart");
 
-      var speedData = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: this.getDataValueMainGraphic()
-      };
+      // var speedData = {
+      //   labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      //   datasets: this.getDataValueMainGraphic()
+      // };
 
-      var chartOptions = {
-        legend: {
-          display: false,
-          position: 'top'
-        }
-      };
+      // var chartOptions = {
+      //   legend: {
+      //     display: false,
+      //     position: 'top'
+      //   }
+      // };
 
-      var lineChart = new Chart(speedCanvas, {
-        type: 'line',
-        hover: false,
-        data: speedData,
-        options: chartOptions
-      });
+      // var lineChart = new Chart(speedCanvas, {
+      //   type: 'line',
+      //   hover: false,
+      //   data: speedData,
+      //   options: chartOptions
+      // });
     }
 
-    getDataValueMainGraphic() {
+    // getDataValueMainGraphic() {
 
-      return [
-        {
-          data: [0, 5, 10, 12, 20, 27, 30, 34, 42, 45, 55, 63],
-          fill: false,
-          borderColor: '#fbc658',
-          backgroundColor: 'transparent',
-          pointBorderColor: '#fbc658',
-          pointRadius: 4,
-          pointHoverRadius: 4,
-          pointBorderWidth: 8
-        },
-        {
-          data: [800, 1500, 3000, 3478, 5452, 3452, 1235, 4895, 7852, 4520, 5789, 4568],
-          fill: false,
-          borderColor: '#51CACF',
-          backgroundColor: 'transparent',
-          pointBorderColor: '#51CACF',
-          pointRadius: 4,
-          pointHoverRadius: 4,
-          pointBorderWidth: 8
-        }
-      ]
-    }
+    //   return [
+    //     {
+    //       data: [0, 5, 10, 12, 20, 27, 30, 34, 42, 45, 55, 63],
+    //       fill: false,
+    //       borderColor: '#fbc658',
+    //       backgroundColor: 'transparent',
+    //       pointBorderColor: '#fbc658',
+    //       pointRadius: 4,
+    //       pointHoverRadius: 4,
+    //       pointBorderWidth: 8
+    //     },
+    //     {
+    //       data: [800, 1500, 3000, 3478, 5452, 3452, 1235, 4895, 7852, 4520, 5789, 4568],
+    //       fill: false,
+    //       borderColor: '#51CACF',
+    //       backgroundColor: 'transparent',
+    //       pointBorderColor: '#51CACF',
+    //       pointRadius: 4,
+    //       pointHoverRadius: 4,
+    //       pointBorderWidth: 8
+    //     }
+    //   ]
+    // }
 }

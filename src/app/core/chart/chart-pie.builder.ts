@@ -4,7 +4,6 @@ export class ChartPieBuilder {
 
     private canvas: any;
     private context: any;
-    private chart: any;
     private chartId: string;
     // Todo: Implement logic for generate random color on demand
     private colors = ['#162701', '#aa17c0', '#ebf21f', '#453854', '#99dccb', '#2a44da', '#7f522b', 
@@ -17,7 +16,7 @@ export class ChartPieBuilder {
     public build(labels: string[], values: string[] | number[]) {
         this.canvas = document.getElementById(this.chartId);
         this.context = this.canvas.getContext('2d');
-        this.chart = new Chart(this.context, {
+        const chart = new Chart(this.context, {
           type: 'pie',
           data: {
             labels: labels,
